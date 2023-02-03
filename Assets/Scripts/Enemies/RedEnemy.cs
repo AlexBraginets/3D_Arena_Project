@@ -10,8 +10,9 @@ namespace Enemies
 {
     public class RedEnemy : Enemy
     {
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             Attack(_player);
         }
 
@@ -55,12 +56,8 @@ namespace Enemies
         private void OnTriggerEnter(Collider other)
         {
             if (!other.IsPlayer()) return;
-            Die();
+            health.Value = 0;
         }
 
-        private void Die()
-        {
-            Destroy(gameObject);
-        }
     }
 }
