@@ -6,6 +6,7 @@ namespace Stats
     public class Health : MonoBehaviour
     {
         [SerializeField] private float initialHealth;
+        [SerializeField] private float maxHealth;
         public event Action<float> OnChanged;
         public event Action OnDied;
         private float _value;
@@ -22,7 +23,7 @@ namespace Stats
             set
             {
                 if (Math.Abs(value - _value) < TOLERANCE) return;
-                _value = Mathf.Clamp(value, 0f, float.MaxValue);
+                _value = Mathf.Clamp(value, 0f, maxHealth);
                 OnChanged?.Invoke(value);
                 if (_value <= TOLERANCE)
                 {
