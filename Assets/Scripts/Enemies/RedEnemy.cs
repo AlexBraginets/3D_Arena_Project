@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Runtime.InteropServices;
+using AI;
 using DG.Tweening;
 using Enemies.Data;
 using UnityEngine;
@@ -16,6 +17,7 @@ namespace Enemies
 
         [SerializeField] private RedEnemyData config;
         [SerializeField] private Transform _player;
+        [SerializeField] private FlyingFollower _flyingFollower;
         private void Setup(Transform player)
         {
             _player = player;
@@ -31,7 +33,7 @@ namespace Enemies
         {
             yield return FlyAbove();
             yield return Pause();
-            yield return ChasePlayer();
+            _flyingFollower.Follow( transform,_player, config.AttackSpeed);
         }
 
         private IEnumerator Pause()
@@ -39,18 +41,7 @@ namespace Enemies
             yield return new WaitForSeconds(config.PauseDuration);
         }
 
-        private IEnumerator ChasePlayer()
-        {
-            float simulaitonStep = .025f;
-            WaitForSeconds wait = new WaitForSeconds(simulaitonStep);
-            while (true)
-            {
-
-                yield return wait;
-                Vector3 direction = (_player.position - transform.position).normalized;
-                transform.position += direction * config.AttackSpeed * simulaitonStep;
-            }
-        }
+        
         private IEnumerator FlyAbove()
         {
             float yOffset = config.FlyAboveOffset;
