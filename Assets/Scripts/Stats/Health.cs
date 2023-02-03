@@ -7,6 +7,7 @@ namespace Stats
     {
         [SerializeField] private float initialHealth;
         [SerializeField] private float maxHealth;
+        public float RelativeHealth => Value / maxHealth;
         public event Action<float> OnChanged;
         public event Action OnDied;
         private float _value;

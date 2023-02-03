@@ -8,8 +8,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Health health;
 
-    private void Awake()
+    public void Damage(float amount)
     {
-        
+        health.Value -= amount;
     }
 }

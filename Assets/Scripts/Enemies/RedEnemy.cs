@@ -10,6 +10,7 @@ namespace Enemies
 {
     public class RedEnemy : Enemy
     {
+        [SerializeField] private float damage;
         protected override void Awake()
         {
             base.Awake();
@@ -55,7 +56,9 @@ namespace Enemies
 
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.IsPlayer()) return;
+            Player player;
+            if (!other.IsPlayer(out  player)) return;
+            player.Damage(damage);
             health.Value = 0;
         }
 
