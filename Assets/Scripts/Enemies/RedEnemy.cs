@@ -60,5 +60,16 @@ namespace Enemies
             transform.DOMoveY(yEnd, duration);
             yield return new WaitForSeconds(duration);
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (!other.IsPlayer()) return;
+            Die();
+        }
+
+        private void Die()
+        {
+            Destroy(gameObject);
+        }
     }
 }
