@@ -9,8 +9,7 @@ namespace Teleportation
         [SerializeField] private Transform[] teleportPoints;
         private void OnTriggerExit(Collider other)
         {
-            if (other.transform.parent == null) return;
-            if (!other.transform.parent.CompareTag("Player")) return;
+            if (!other.IsPlayer()) return;
             TeleportPlayer();
         }
 
