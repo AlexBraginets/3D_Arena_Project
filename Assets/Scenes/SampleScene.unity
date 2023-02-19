@@ -660,12 +660,6 @@ Transform:
   m_Father: {fileID: 198456211}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!195 &426665536 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 7070363467695534883, guid: 2cd4c1d477446b84a94834362dfc70a3,
-    type: 3}
-  m_PrefabInstance: {fileID: 7070363467840640355}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &444863521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,6 +1117,7 @@ MonoBehaviour:
   health: {fileID: 774969171}
   damage: 15
   graphics: {fileID: 0}
+  _actionTrigger: {fileID: 0}
   config: {fileID: 11400000, guid: 9c28c448f4bf0a9409d485644b617008, type: 2}
   _player: {fileID: 8997996947062489091}
   _flyingFollower: {fileID: 767888296}
@@ -2595,12 +2590,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 565336492}
   healthBar: {fileID: 1060138153}
---- !u!4 &2063776310 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5327312674040310659, guid: 2cd4c1d477446b84a94834362dfc70a3,
-    type: 3}
-  m_PrefabInstance: {fileID: 7070363467840640355}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2113284754
 GameObject:
   m_ObjectHideFlags: 0
@@ -3108,6 +3097,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6058332245026556865, guid: 7b84c434935761f41b7e0f823237f2ed,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b84c434935761f41b7e0f823237f2ed, type: 3}
 --- !u!1001 &7070363467840640355
@@ -3117,26 +3111,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 722990994402683411, guid: 2cd4c1d477446b84a94834362dfc70a3,
-        type: 3}
-      propertyPath: graphics
-      value: 
-      objectReference: {fileID: 2063776310}
-    - target: {fileID: 5327312674040310664, guid: 2cd4c1d477446b84a94834362dfc70a3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6771398443762366712, guid: 2cd4c1d477446b84a94834362dfc70a3,
-        type: 3}
-      propertyPath: _agent
-      value: 
-      objectReference: {fileID: 426665536}
-    - target: {fileID: 6771398443762366712, guid: 2cd4c1d477446b84a94834362dfc70a3,
-        type: 3}
-      propertyPath: graphics
-      value: 
-      objectReference: {fileID: 2063776310}
     - target: {fileID: 7070363467695534940, guid: 2cd4c1d477446b84a94834362dfc70a3,
         type: 3}
       propertyPath: m_RootOrder
