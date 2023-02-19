@@ -476,6 +476,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.20625
       objectReference: {fileID: 0}
+    - target: {fileID: 4135013735270702863, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5393215578589016642, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5393215578589016642, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: m_IsActive
@@ -510,6 +520,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerCapsule
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228376, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
@@ -1172,7 +1187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 565336493}
   - component: {fileID: 565336492}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2218,7 +2233,7 @@ GameObject:
   - component: {fileID: 1375209281}
   - component: {fileID: 1375209280}
   - component: {fileID: 1375209279}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Player graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
