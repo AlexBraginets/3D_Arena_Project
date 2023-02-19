@@ -1237,7 +1237,7 @@ GameObject:
   - component: {fileID: 698978527}
   - component: {fileID: 698978526}
   - component: {fileID: 698978531}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1368,7 +1368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 767888297}
   - component: {fileID: 767888296}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Followers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1412,7 +1412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 774969170}
   - component: {fileID: 774969171}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1839,7 +1839,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 311
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
@@ -1849,7 +1849,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.052183334
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: dac3533519f023540a3d6b619b653a7a, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &1039345207
 GameObject:
@@ -3054,7 +3054,7 @@ PrefabInstance:
     - target: {fileID: 3166189673979774165, guid: a0bac3c01b360c8438d4a60ec175e412,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.311
+      value: 1.08
       objectReference: {fileID: 0}
     - target: {fileID: 3166189673979774165, guid: a0bac3c01b360c8438d4a60ec175e412,
         type: 3}
@@ -3105,6 +3105,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166189673979774174, guid: a0bac3c01b360c8438d4a60ec175e412,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0bac3c01b360c8438d4a60ec175e412, type: 3}
@@ -3174,6 +3179,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 3181340719786135382, guid: d984bb18199cfea44b9c98c6c0840a0c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d984bb18199cfea44b9c98c6c0840a0c, type: 3}
