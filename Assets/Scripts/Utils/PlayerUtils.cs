@@ -4,8 +4,8 @@ public static class PlayerUtils
 {
     public static bool IsPlayer(this Collider collider)
     {
-        if (collider.transform.parent == null) return false;
-        return collider.transform.parent.CompareTag("Player");
+        if (collider == null) return false;
+        return collider.CompareTag("Player");
     }
     public static bool IsPlayer(this Collider collider, out Player player)
     {
@@ -13,7 +13,7 @@ public static class PlayerUtils
         bool isPlayer = collider.IsPlayer();
         if (isPlayer)
         {
-            player = collider.transform.parent.GetComponent<Player>();
+            player = collider.GetComponent<Player>();
         }
         return isPlayer;
     }
