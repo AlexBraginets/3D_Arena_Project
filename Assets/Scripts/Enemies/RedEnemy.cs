@@ -1,20 +1,22 @@
 using System;
 using System.Collections;
-using System.Runtime.InteropServices;
 using AI;
 using DG.Tweening;
 using Enemies.Data;
 using UnityEngine;
+using Utils;
 
 namespace Enemies
 {
     public class RedEnemy : Enemy
     {
         [SerializeField] private float damage;
+        [SerializeField] private Transform graphics;
         protected override void Awake()
         {
             base.Awake();
-            Attack(_player);
+            var player = ReferencesHolder.Instance.Player;
+            Attack(player.transform);
         }
 
         [SerializeField] private RedEnemyData config;
@@ -35,7 +37,7 @@ namespace Enemies
         {
             yield return FlyAbove();
             yield return Pause();
-            _flyingFollower.Follow( transform,_player, config.AttackSpeed);
+            _flyingFollower.Follow( _player, config.AttackSpeed);
         }
 
         private IEnumerator Pause()
@@ -48,9 +50,9 @@ namespace Enemies
         {
             float yOffset = config.FlyAboveOffset;
             float duration = config.FlyAboveDuration;
-            float y = transform.position.y;
+            float y = graphics.position.y;
             float yEnd = y + yOffset;
-            transform.DOMoveY(yEnd, duration);
+            graphics.DOMoveY(yEnd, duration);
             yield return new WaitForSeconds(duration);
         }
 
