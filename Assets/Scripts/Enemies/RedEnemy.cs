@@ -2,6 +2,7 @@ using System.Collections;
 using AI;
 using DG.Tweening;
 using Enemies.Data;
+using Spawning;
 using UnityEngine;
 using Utils;
 
@@ -18,8 +19,7 @@ namespace Enemies
             base.Awake();
             SubscribeToOnTriggerEnter();
 
-            var player = ReferencesHolder.Instance.Player;
-            Attack(player.transform);
+          
         }
 
         [SerializeField] private RedEnemyData config;
@@ -54,8 +54,9 @@ namespace Enemies
         {
             float yOffset = config.FlyAboveOffset;
             float duration = config.FlyAboveDuration;
-            float y = graphics.position.y;
+            float y = graphics.localPosition.y;
             float yEnd = y + yOffset;
+            
             graphics.DOMoveY(yEnd, duration);
             yield return new WaitForSeconds(duration);
         }

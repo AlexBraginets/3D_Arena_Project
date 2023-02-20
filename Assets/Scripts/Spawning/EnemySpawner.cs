@@ -1,6 +1,7 @@
 using System.Collections;
 using Enemies;
 using UnityEngine;
+using Utils;
 
 namespace Spawning
 {
@@ -43,10 +44,13 @@ namespace Spawning
             Spawn(spawnPosition, enemyPrefab);
         }
 
+
         private void Spawn(Vector3 position, Enemy enemyPrefab)
         {
+            var player = ReferencesHolder.Instance.Player;
             var enemy = Instantiate(enemyPrefab);
             (enemy as RedEnemy)?.Place(position);
+            (enemy as RedEnemy)?.Attack(player.transform);
         }
 
         private Vector3 GetRandomSpawnPosition()
