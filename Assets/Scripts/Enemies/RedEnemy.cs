@@ -60,6 +60,14 @@ namespace Enemies
             yield return new WaitForSeconds(duration);
         }
 
+        public void Place(Vector3 position)
+        {
+            var planePosition = position;
+            planePosition.y = 0f;
+            transform.position = planePosition;
+            graphics.localPosition = Vector3.up * position.y;
+        }
+
         private void SubscribeToOnTriggerEnter()
         {
             _actionTrigger.OnTriggerEntered += other =>
