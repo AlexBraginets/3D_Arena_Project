@@ -3076,14 +3076,6 @@ PrefabInstance:
       propertyPath: _camera
       value: 
       objectReference: {fileID: 310992483}
-    - target: {fileID: 1255051804, guid: 7b84c434935761f41b7e0f823237f2ed, type: 3}
-      propertyPath: _bulletSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1255051804, guid: 7b84c434935761f41b7e0f823237f2ed, type: 3}
-      propertyPath: _targetMask.m_Bits
-      value: 8192
-      objectReference: {fileID: 0}
     - target: {fileID: 2560044823753496135, guid: 7b84c434935761f41b7e0f823237f2ed,
         type: 3}
       propertyPath: m_Name

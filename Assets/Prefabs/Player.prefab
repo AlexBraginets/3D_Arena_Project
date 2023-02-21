@@ -44,10 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187159371b80c594888308595ffc404a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletSpeed: 10
+  _bulletSpeed: 5
   _bulletPrefab: {fileID: 7193385955582913173, guid: a9156add690617247b4174a263e3808f,
     type: 3}
   _camera: {fileID: 0}
+  _targetMask:
+    serializedVersion: 2
+    m_Bits: 8192
 --- !u!1 &1964677055
 GameObject:
   m_ObjectHideFlags: 0
