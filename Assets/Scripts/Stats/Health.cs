@@ -25,7 +25,7 @@ namespace Stats
             {
                 if (Math.Abs(value - _value) < TOLERANCE) return;
                 _value = Mathf.Clamp(value, 0f, maxHealth);
-                OnChanged?.Invoke(value);
+                OnChanged?.Invoke(_value);
                 if (_value <= TOLERANCE)
                 {
                     OnDied?.Invoke();
