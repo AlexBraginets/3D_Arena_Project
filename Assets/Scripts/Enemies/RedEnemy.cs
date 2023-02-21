@@ -1,10 +1,9 @@
+using System;
 using System.Collections;
 using AI;
 using DG.Tweening;
 using Enemies.Data;
-using Spawning;
 using UnityEngine;
-using Utils;
 
 namespace Enemies
 {
@@ -13,7 +12,7 @@ namespace Enemies
         [SerializeField] private float damage;
         [SerializeField] private Transform graphics;
         [SerializeField] private ActionTrigger _actionTrigger;
-
+        [SerializeField] private CapsuleCollider _collider;
         protected override void Awake()
         {
             base.Awake();
@@ -29,6 +28,11 @@ namespace Enemies
         private void Setup(Transform player)
         {
             _player = player;
+        }
+
+        private void Update()
+        {
+            _collider.center = graphics.localPosition;
         }
 
         public void Attack(Transform player)

@@ -16,5 +16,10 @@ namespace Enemies
         {
             Destroy(gameObject);
         }
+
+        public void Kill()
+        {
+            health.Value = 0f;
+        }
     }
 }

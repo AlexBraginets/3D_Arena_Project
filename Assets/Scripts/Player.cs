@@ -1,4 +1,3 @@
-using System;
 using Shooting.Weapons;
 using Stats;
 using UnityEngine;

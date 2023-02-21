@@ -8,6 +8,7 @@ namespace Shooting.Weapons
         [SerializeField] private float _bulletSpeed;
         [SerializeField] private BallisticBullet _bulletPrefab;
         [SerializeField] private Camera _camera;
+        [SerializeField] private LayerMask _targetMask;
 
         public void Shoot()
         {
@@ -20,6 +21,7 @@ namespace Shooting.Weapons
         {
             var bullet = Instantiate(_bulletPrefab, position, Quaternion.identity);
             bullet.SetVelocity(direction * _bulletSpeed);
+            bullet.SetTargetMask(_targetMask);
         }
     }
 }

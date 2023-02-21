@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5013244852069171577
+--- !u!1 &1202826979961993480
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4012345994591000187}
-  - component: {fileID: 3039966290144384330}
-  - component: {fileID: 2656459922276468448}
+  - component: {fileID: 7800649919258697260}
+  - component: {fileID: 6589053228446116082}
   m_Layer: 13
   m_Name: Trigger
   m_TagString: Untagged
@@ -18,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4012345994591000187
+--- !u!4 &7800649919258697260
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5013244852069171577}
+  m_GameObject: {fileID: 1202826979961993480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -33,13 +32,13 @@ Transform:
   m_Father: {fileID: 5327312674040310659}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &3039966290144384330
+--- !u!136 &6589053228446116082
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5013244852069171577}
+  m_GameObject: {fileID: 1202826979961993480}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
@@ -47,18 +46,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2656459922276468448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5013244852069171577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b3ff3e708f06f2499f3a056c75e8526, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7070363467695534941
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,6 +58,8 @@ GameObject:
   - component: {fileID: 722990994402683411}
   - component: {fileID: 7070363467695534883}
   - component: {fileID: 6771398443762366712}
+  - component: {fileID: 7463862137965097256}
+  - component: {fileID: 613086530915158450}
   m_Layer: 13
   m_Name: Red enemy
   m_TagString: Untagged
@@ -110,7 +99,8 @@ MonoBehaviour:
   health: {fileID: 1412790084864155852}
   damage: 10
   graphics: {fileID: 5327312674040310659}
-  _actionTrigger: {fileID: 2656459922276468448}
+  _actionTrigger: {fileID: 7463862137965097256}
+  _collider: {fileID: 613086530915158450}
   config: {fileID: 11400000, guid: 9c28c448f4bf0a9409d485644b617008, type: 2}
   _player: {fileID: 0}
   _flyingFollower: {fileID: 6771398443762366712}
@@ -150,6 +140,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _agent: {fileID: 7070363467695534883}
   graphics: {fileID: 5327312674040310659}
+--- !u!114 &7463862137965097256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7070363467695534941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b3ff3e708f06f2499f3a056c75e8526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &613086530915158450
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7070363467695534941}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.05
+  m_Height: 0.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &8854486861059729865
 GameObject:
   m_ObjectHideFlags: 0

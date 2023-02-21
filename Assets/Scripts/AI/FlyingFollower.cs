@@ -7,7 +7,7 @@ namespace AI
     {
         [SerializeField] private NavMeshAgent _agent;
         [SerializeField] private Transform graphics;
-        private Vector3 TargetPosition => _target.position + Vector3.up * 0.15f;
+        private Vector3 TargetPosition => _target.position + Vector3.up * 0.15f * 3f;
         private Vector3 CurrentPosition => graphics.position;
 
         private float Angle
