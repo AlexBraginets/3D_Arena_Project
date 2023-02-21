@@ -2529,52 +2529,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8827ae45458d6c14e8bcfa3f3380d37c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1964677055
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1964677056}
-  - component: {fileID: 1964677057}
-  m_Layer: 11
-  m_Name: Ultimate Power
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1964677056
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1964677055}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8997996947062489091}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1964677057
+--- !u!114 &1964677057 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1964677057, guid: 7b84c434935761f41b7e0f823237f2ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 6058332245861747966}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1964677055}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a00875148fa8c24f8b4da998a265ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialPower: 50
-  maxPower: 100
 --- !u!1 &2003547856
 GameObject:
   m_ObjectHideFlags: 0
@@ -3089,11 +3055,6 @@ PrefabInstance:
     - target: {fileID: 2939948512648350973, guid: 7b84c434935761f41b7e0f823237f2ed,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6058332245026556865, guid: 7b84c434935761f41b7e0f823237f2ed,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

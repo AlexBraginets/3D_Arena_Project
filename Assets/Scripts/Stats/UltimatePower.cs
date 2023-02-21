@@ -7,7 +7,7 @@ namespace Stats
     {
         [SerializeField] private float initialPower;
         [SerializeField] private float maxPower;
-        public float RelativePower => initialPower / maxPower;
+        public float RelativePower => Value / maxPower;
         public event Action<float> OnChanged;
         public event Action<float> OnMaxPower;
         private float _value;

@@ -1,11 +1,14 @@
+using System;
 using UnityEngine;
+using Utils;
 
 namespace Shooting
 {
     public class TargetBullet : MonoBehaviour
     {
+        [SerializeField] private float powerDamage = 25f;
         [SerializeField] private float speed;
-        private float _targetYOffset; 
+        private float _targetYOffset;
         private Transform _target;
 
         private Vector3 DirectionToTarget
@@ -17,6 +20,7 @@ namespace Shooting
                 return (to - from).normalized;
             }
         }
+
         public void SetTarget(Transform target, float yOffset)
         {
             _target = target;
@@ -29,6 +33,15 @@ namespace Shooting
             float dt = Time.deltaTime;
             Vector3 dPosition = speed * dt * DirectionToTarget;
             transform.position += dPosition;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (!other.CompareTag("Player")) return;
+            var player = ReferencesHolder.Instance.Player;
+            if (!player) return;
+            player.AddPower(-powerDamage);
+            Destroy(gameObject);
         }
     }
 }
