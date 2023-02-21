@@ -1,8 +1,7 @@
-using System;
 using UnityEngine;
 using Utils;
 
-namespace Shooting
+namespace Shooting.Bullets
 {
     public class TargetBullet : MonoBehaviour
     {
