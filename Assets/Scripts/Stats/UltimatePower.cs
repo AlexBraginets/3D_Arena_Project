@@ -1,13 +1,14 @@
 using System;
+using Data;
 using UnityEngine;
 
 namespace Stats
 {
     public class UltimatePower : MonoBehaviour
     {
-        [SerializeField] private float initialPower;
-        [SerializeField] private float maxPower;
-        public float RelativePower => Value / maxPower;
+        [SerializeField] private UltimatePowerConfig _config;
+        private float MaxPower => _config.MaxPower;
+        public float RelativePower => Value / MaxPower;
         public event Action<float> OnChanged;
         public event Action<float> OnMaxPower;
         private float _value;
@@ -15,7 +16,12 @@ namespace Stats
 
         private void Start()
         {
-            Value = initialPower;
+           Init();
+        }
+
+        private void Init()
+        {
+            Value = _config.InitialPower;
         }
 
         public float Value
@@ -24,11 +30,11 @@ namespace Stats
             set
             {
                 if (Mathf.Abs(value - _value) < TOLERANCE) return;
-                _value = Mathf.Clamp(value, 0f, maxPower);
+                _value = Mathf.Clamp(value, 0f, MaxPower);
                 OnChanged?.Invoke(_value);
-                if (Mathf.Abs(_value - maxPower) < TOLERANCE)
+                if (Mathf.Abs(_value - MaxPower) < TOLERANCE)
                 {
-                    OnMaxPower?.Invoke(maxPower);
+                    OnMaxPower?.Invoke(MaxPower);
                 }
             }
         }
