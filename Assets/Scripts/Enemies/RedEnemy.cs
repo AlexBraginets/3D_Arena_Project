@@ -13,6 +13,8 @@ namespace Enemies
         [SerializeField] private Transform graphics;
         [SerializeField] private ActionTrigger _actionTrigger;
         [SerializeField] private CapsuleCollider _collider;
+        public override Vector3 Position => graphics.position;
+
         protected override void Awake()
         {
             base.Awake();

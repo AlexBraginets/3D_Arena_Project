@@ -1,5 +1,6 @@
 using Enemies;
 using UnityEngine;
+using Utils;
 
 namespace Shooting.Bullets
 {
@@ -32,6 +33,11 @@ namespace Shooting.Bullets
             var enemy = other.GetComponent<Enemy>();
             if (!enemy) return;
             enemy.Kill();
+            float speed = _velocity.magnitude;
+            var closestEnemy = ReferencesHolder.Instance.ProximityEnemyProvider.ClosestEnemy(transform.position, enemy);
+            if (closestEnemy == null) return;
+            Vector3 direction = (closestEnemy.Position - transform.position).normalized;
+            SetVelocity(speed * direction);
         }
     }
 }

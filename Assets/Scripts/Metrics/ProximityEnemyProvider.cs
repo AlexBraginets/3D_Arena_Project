@@ -10,9 +10,10 @@ namespace Metrics
     {
         private List<Enemy> Enemies => ReferencesHolder.Instance.EnemiesList.Enemies;
 
-        public Enemy ClosestEnemy(Vector3 position)
+        public Enemy ClosestEnemy(Vector3 position, Enemy excludeEnemy)
         {
-            return Enemies.OrderBy(enemy => Vector3.Distance(enemy.transform.position, position)).First();
+            return Enemies.Where(enemy => enemy != excludeEnemy)
+                .OrderBy(enemy => Vector3.Distance(enemy.Position, position)).FirstOrDefault();
         }
     }
 }

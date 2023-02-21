@@ -7,7 +7,7 @@ namespace Enemies
     public class Enemy : MonoBehaviour
     {
         [SerializeField] protected Health health;
-
+        public virtual Vector3 Position => transform.position;
         protected virtual void Awake()
         {
             health.OnDied += Die;

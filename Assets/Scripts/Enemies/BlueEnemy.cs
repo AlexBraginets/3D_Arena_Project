@@ -7,6 +7,7 @@ namespace Enemies
     public class BlueEnemy : Enemy
     {
         [SerializeField] private NavMeshAgent _agent;
+        public override Vector3 Position => transform.position + Vector3.up * .15f;
         private Transform _target;
         protected override void Awake()
         {
