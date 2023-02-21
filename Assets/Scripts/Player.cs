@@ -31,7 +31,6 @@ public class Player : MonoBehaviour
 
     public void AddPower(float amount)
     {
-        Debug.LogError($"add power: {amount}");
         ultimatePower.Value += amount;
     }
 }

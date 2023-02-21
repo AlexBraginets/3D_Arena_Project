@@ -35,7 +35,6 @@ namespace Visibility
             }
             else
             {
-                Debug.LogError("Not possible.");
                 IsVisible = false;
             }
 
@@ -58,7 +57,6 @@ namespace Visibility
             }
             else
             {
-                Debug.LogError("Not possible.");
                 IsVisible = false;
             }
         }
