@@ -32,6 +32,7 @@ namespace UI.StatDisplays
         private void UpdateUI(float health)
         {
             healthBar.fillAmount = this.health.RelativeHealth;
+            Debug.LogError($"health = {health}");
         }
     }
 }
