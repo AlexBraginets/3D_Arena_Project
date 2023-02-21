@@ -1,7 +1,5 @@
-using System;
 using Shooting.Bullets;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Shooting.Weapons
 {
@@ -10,14 +8,6 @@ namespace Shooting.Weapons
         [SerializeField] private float _bulletSpeed;
         [SerializeField] private BallisticBullet _bulletPrefab;
         [SerializeField] private Camera _camera;
-
-        private void Update()
-        {
-            if (Mouse.current.leftButton.wasPressedThisFrame)
-            {
-                Shoot();
-            }
-        }
 
         public void Shoot()
         {
