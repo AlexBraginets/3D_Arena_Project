@@ -1,5 +1,6 @@
 using Stats;
 using UnityEngine;
+using Utils;
 
 namespace Enemies
 {
@@ -10,6 +11,7 @@ namespace Enemies
         protected virtual void Awake()
         {
             health.OnDied += Die;
+            Register();
         }
 
         protected virtual void Die()
@@ -20,6 +22,21 @@ namespace Enemies
         public void Kill()
         {
             health.Value = 0f;
+        }
+
+        protected void OnDestroy()
+        {
+            Unregister();
+        }
+
+        private void Register()
+        {
+            ReferencesHolder.Instance.EnemiesList.RegisterEnemy(this);
+        }
+
+        private void Unregister()
+        {
+            ReferencesHolder.Instance.EnemiesList.UnregisterEnemy(this);
         }
     }
 }

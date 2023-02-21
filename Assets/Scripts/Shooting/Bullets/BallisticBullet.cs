@@ -1,6 +1,4 @@
-using System;
 using Enemies;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace Shooting.Bullets
@@ -30,7 +28,6 @@ namespace Shooting.Bullets
 
         private void OnTriggerEnter(Collider other)
         {
-            Debug.LogError($"other.gameObject.layer: {2 << (other.gameObject.layer)} : _targetMask: {(int)_targetMask}", other);
             if (2 << ((other.gameObject.layer - 1)) != _targetMask) return;
             var enemy = other.GetComponent<Enemy>();
             if (!enemy) return;
