@@ -194,8 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 239e7d5c9f486954ba4a78f65fa6a4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 100
-  maxHealth: 100
+  _config: {fileID: 11400000, guid: cebd910011a17c14795788ab538463bf, type: 2}
 --- !u!1001 &7070363469333720918
 PrefabInstance:
   m_ObjectHideFlags: 0

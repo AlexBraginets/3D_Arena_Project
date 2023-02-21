@@ -1,21 +1,26 @@
 using System;
+using Data;
 using UnityEngine;
 
 namespace Stats
 {
     public class Health : MonoBehaviour
     {
-        [SerializeField] private float initialHealth;
-        [SerializeField] private float maxHealth;
-        public float RelativeHealth => Value / maxHealth;
+        [SerializeField] private HealthConfig _config;
+        public float RelativeHealth => Value / MaxHealth;
         public event Action<float> OnChanged;
         public event Action OnDied;
         private float _value;
         private const float TOLERANCE = Single.Epsilon * 10f;
-
+        private float MaxHealth => _config.MaxHealth;
         private void Start()
         {
-            Value = initialHealth;
+            Init();
+        }
+
+        private void Init()
+        {
+            Value = _config.InitialHealth;
         }
 
         public float Value
@@ -24,7 +29,7 @@ namespace Stats
             set
             {
                 if (Math.Abs(value - _value) < TOLERANCE) return;
-                _value = Mathf.Clamp(value, 0f, maxHealth);
+                _value = Mathf.Clamp(value, 0f, MaxHealth);
                 OnChanged?.Invoke(_value);
                 if (_value <= TOLERANCE)
                 {
