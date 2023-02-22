@@ -12,7 +12,6 @@ namespace Enemies
         [SerializeField] private float damage;
         [SerializeField] private Transform graphics;
         [SerializeField] private ActionTrigger _actionTrigger;
-        [SerializeField] private CapsuleCollider _collider;
         public override Vector3 Position => graphics.position;
 
         protected override void Awake()
@@ -30,11 +29,6 @@ namespace Enemies
         private void Setup(Transform player)
         {
             _player = player;
-        }
-
-        private void Update()
-        {
-            _collider.center = graphics.localPosition;
         }
 
         public void Attack(Transform player)
@@ -83,6 +77,7 @@ namespace Enemies
                 if (!other.IsPlayer(out player)) return;
                 player.Damage(damage);
                 health.Value = 0;
+                Debug.LogError("OnTriggerEnter: Red enemy -> Player");
             };
         }
     }

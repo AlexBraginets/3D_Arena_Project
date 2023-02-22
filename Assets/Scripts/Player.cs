@@ -6,8 +6,7 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [SerializeField] private BallisticBulletWeapon _weapon;
-    [Header("Stats")]
-    [SerializeField] private Health health;
+    [Header("Stats")] [SerializeField] private Health health;
     [SerializeField] private UltimatePower ultimatePower;
 
     private void Update()
@@ -25,7 +24,12 @@ public class Player : MonoBehaviour
 
     public void Damage(float amount)
     {
-        health.Value -= amount;
+        AddHealth(-amount);
+    }
+
+    public void AddHealth(float amout)
+    {
+        health.Value += amout;
     }
 
     public void AddPower(float amount)
