@@ -75,7 +75,6 @@ namespace Enemies
                 if (!other.IsPlayer(out player)) return;
                 player.Damage(damage);
                 health.Value = 0;
-                Debug.LogError("OnTriggerEnter: Red enemy -> Player");
             };
         }
     }
