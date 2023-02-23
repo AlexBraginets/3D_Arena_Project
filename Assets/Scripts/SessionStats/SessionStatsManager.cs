@@ -7,7 +7,7 @@ namespace SessionStats
     public class SessionStatsManager : MonoBehaviour
     {
         [SerializeField] private SessionStatsInfo _stats;
-
+        public SessionStatsInfo Stats => _stats;
         private void Awake()
         {
             _stats.ResetStats();
