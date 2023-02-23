@@ -4,11 +4,12 @@ using UnitStats;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GamaManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     [SerializeField] private Health _playerHealth;
     [SerializeField] private GameOverDisplay _gameOverDisplay;
-
+    public event Action OnGamePaused;
+    public event Action OnGameResumed;
     private void Awake()
     {
         _playerHealth.OnDied += _gameOverDisplay.Show;
@@ -23,11 +24,13 @@ public class GamaManager : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0f;
+        OnGamePaused?.Invoke();
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1f;
+        OnGameResumed?.Invoke();
     }
     public void RestartLevel()
     {

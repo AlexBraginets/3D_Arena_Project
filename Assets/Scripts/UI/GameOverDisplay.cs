@@ -11,7 +11,7 @@ namespace UI
         [SerializeField] private SessionStatsManager _sessionStatsManager;
         [SerializeField] private TMP_Text killedEnemiesLabel;
         [SerializeField] private Button restartButton;
-        [SerializeField] private GamaManager _gameManager;
+        [SerializeField] private GameManager _gameManager;
 
         private void Awake()
         {

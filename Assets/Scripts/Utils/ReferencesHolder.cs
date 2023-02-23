@@ -1,6 +1,7 @@
 using Enemies;
 using Metrics;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Utils
 {
@@ -10,6 +11,7 @@ namespace Utils
         public Player Player;
         public ProximityEnemyProvider ProximityEnemyProvider;
         public EnemiesList EnemiesList;
+        [FormerlySerializedAs("GamaManager")] public GameManager gameManager;
         public static ReferencesHolder Instance { get; private set; }
 
         private void Awake()
