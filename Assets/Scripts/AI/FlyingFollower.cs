@@ -33,6 +33,7 @@ namespace AI
         {
             _target = target;
             _speed = speed;
+            _agent.enabled = true;
         }
 
         private void Update()

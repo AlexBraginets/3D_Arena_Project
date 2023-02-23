@@ -18,8 +18,6 @@ namespace Enemies
         {
             base.Awake();
             SubscribeToOnTriggerEnter();
-
-          
         }
 
         [SerializeField] private RedEnemyData config;
@@ -56,7 +54,7 @@ namespace Enemies
             float duration = config.FlyAboveDuration;
             float y = graphics.localPosition.y;
             float yEnd = y + yOffset;
-            
+
             graphics.DOMoveY(yEnd, duration);
             yield return new WaitForSeconds(duration);
         }

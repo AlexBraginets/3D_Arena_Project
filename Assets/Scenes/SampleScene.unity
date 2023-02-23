@@ -593,7 +593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 722990994402683411, guid: 2cd4c1d477446b84a94834362dfc70a3,
     type: 3}
-  _spawnTime: 0.02
+  _spawnTime: 1
   _spawnPoint: {fileID: 712535428}
 --- !u!4 &276841276
 Transform:
@@ -1147,7 +1147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712535427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.21, y: 0.1, z: 2.07}
+  m_LocalPosition: {x: 1.249, y: 0.373, z: 1.409}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
