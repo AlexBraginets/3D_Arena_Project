@@ -1,3 +1,4 @@
+using System;
 using UnitStats;
 using UnityEngine;
 using Utils;
@@ -7,6 +8,7 @@ namespace Enemies
     public class Enemy : MonoBehaviour
     {
         [SerializeField] protected Health health;
+        public static event Action<Enemy> OnEnemyDied;
         public virtual Vector3 Position => transform.position;
         protected virtual void Awake()
         {
@@ -16,6 +18,7 @@ namespace Enemies
 
         protected virtual void Die()
         {
+            OnEnemyDied?.Invoke(this);
             Destroy(gameObject);
         }
 
