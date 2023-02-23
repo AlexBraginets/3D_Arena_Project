@@ -1,5 +1,5 @@
 using Shooting.Bullets;
-using Stats;
+using UnitStats;
 using UnityEngine;
 
 namespace Data

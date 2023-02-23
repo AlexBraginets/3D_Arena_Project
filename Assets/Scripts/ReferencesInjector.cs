@@ -1,5 +1,5 @@
 using Data;
-using Stats;
+using UnitStats;
 using UnityEngine;
 
 public class ReferencesInjector : MonoBehaviour

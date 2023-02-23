@@ -1,4 +1,4 @@
-using Stats;
+using UnitStats;
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -1,6 +1,6 @@
 using System;
 using Enemies;
-using Stats;
+using UnitStats;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;

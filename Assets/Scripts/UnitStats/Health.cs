@@ -2,7 +2,7 @@ using System;
 using Data;
 using UnityEngine;
 
-namespace Stats
+namespace UnitStats
 {
     public class Health : MonoBehaviour
     {
