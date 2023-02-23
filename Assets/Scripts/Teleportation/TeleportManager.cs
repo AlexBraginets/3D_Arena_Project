@@ -25,6 +25,8 @@ namespace Teleportation
         private void TeleportPlayer(Vector3 position)
         {
             player.position = position;
+            position.y = 0f;
+            player.rotation = Quaternion.LookRotation(-position);
         }
 
         private Vector3 GetTeleportPosition()
