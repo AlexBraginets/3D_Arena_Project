@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         _playerHealth.OnDied += _gameOverDisplay.Show;
+        _playerHealth.OnDied += PauseGame;
     }
 
     private void Update()
@@ -35,6 +36,6 @@ public class GameManager : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(0);
-        Debug.LogError("SceneManager.LoadScene(0)");
+        Time.timeScale = 1f;
     }
 }

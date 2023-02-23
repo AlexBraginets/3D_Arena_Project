@@ -11,24 +11,24 @@ namespace UI
 
         private void Awake()
         {
-            pauseButton.onClick.AddListener(PauseGame);
-            resumeButton.onClick.AddListener(ResumeGame);
+            var gameManager = ReferencesHolder.Instance.gameManager;
+            pauseButton.onClick.AddListener(gameManager.PauseGame);
+            resumeButton.onClick.AddListener(gameManager.ResumeGame);
+
+            gameManager.OnGamePaused += OnGamePaused;
+            gameManager.OnGameResumed += OnGameResumed;
         }
 
-        private void PauseGame()
+        private void OnGamePaused()
         {
             pauseButton.gameObject.SetActive(false);
             resumeButton.gameObject.SetActive(true);
-            var gameManager = ReferencesHolder.Instance.gameManager;
-            gameManager.PauseGame();
         }
 
-        private void ResumeGame()
+        private void OnGameResumed()
         {
             pauseButton.gameObject.SetActive(true);
             resumeButton.gameObject.SetActive(false);
-            var gameManager = ReferencesHolder.Instance.gameManager;
-            gameManager.ResumeGame();
         }
     }
 }

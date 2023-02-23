@@ -2600,6 +2600,7 @@ MonoBehaviour:
   killedEnemiesLabel: {fileID: 503407508}
   restartButton: {fileID: 2057956203}
   _gameManager: {fileID: 1240117140}
+  _pauseUIController: {fileID: 1657857556}
 --- !u!1 &1097689761
 GameObject:
   m_ObjectHideFlags: 0

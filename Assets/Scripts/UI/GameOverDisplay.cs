@@ -12,6 +12,7 @@ namespace UI
         [SerializeField] private TMP_Text killedEnemiesLabel;
         [SerializeField] private Button restartButton;
         [SerializeField] private GameManager _gameManager;
+        [SerializeField] private GameObject _pauseUIController;
 
         private void Awake()
         {
@@ -20,6 +21,7 @@ namespace UI
 
         public void Show()
         {
+            _pauseUIController.SetActive(false);
             gameObject.SetActive(true);
             int killedEnemiesAmount = _sessionStatsManager.Stats.EnemiesKilled;
             killedEnemiesLabel.text = $"Enemies killed: {killedEnemiesAmount}";
