@@ -1,4 +1,6 @@
+using System.Linq;
 using UnityEngine;
+using Utils;
 using Random = UnityEngine.Random;
 
 namespace Teleportation
@@ -7,6 +9,7 @@ namespace Teleportation
     {
         [SerializeField] private Transform player;
         [SerializeField] private Transform[] teleportPoints;
+
         private void OnTriggerExit(Collider other)
         {
             if (!other.IsPlayer()) return;
@@ -18,6 +21,7 @@ namespace Teleportation
             Vector3 teleportPosition = GetTeleportPosition();
             TeleportPlayer(teleportPosition);
         }
+
         private void TeleportPlayer(Vector3 position)
         {
             player.position = position;
@@ -25,9 +29,19 @@ namespace Teleportation
 
         private Vector3 GetTeleportPosition()
         {
-            int rndIdx = Random.Range(0, teleportPoints.Length);
-            Transform rndPoint = teleportPoints[rndIdx];
-            return rndPoint.position;
+            var enemies = ReferencesHolder.Instance.EnemiesList.Enemies;
+            if (enemies.Count == 0)
+            {
+                int rndIdx = Random.Range(0, teleportPoints.Length);
+                Transform rndPoint = teleportPoints[rndIdx];
+                return rndPoint.position;
+            }
+
+            float maxRadius = 5f;
+            Vector3[] points = enemies.Select(enemy => enemy.Position).ToArray();
+            Vector3 furthestPoint = TeleportationUtils.FurthestPoint(points, maxRadius);
+
+            return furthestPoint;
         }
     }
 }

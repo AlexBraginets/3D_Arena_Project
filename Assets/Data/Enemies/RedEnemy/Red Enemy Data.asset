@@ -15,4 +15,4 @@ MonoBehaviour:
   FlyAboveOffset: 0.2
   FlyAboveDuration: 0.3
   PauseDuration: 0.1
-  AttackSpeed: 0.2
+  AttackSpeed: 1
