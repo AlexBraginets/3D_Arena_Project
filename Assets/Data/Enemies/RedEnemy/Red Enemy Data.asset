@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ea4806ec10727e438445217aa6ec72a, type: 3}
   m_Name: Red Enemy Data
   m_EditorClassIdentifier: 
-  FlyAboveOffset: 0.2
+  FlyAboveOffset: 1
   FlyAboveDuration: 0.3
-  PauseDuration: 0.1
-  AttackSpeed: 1
+  PauseDuration: 2
+  AttackSpeed: 2

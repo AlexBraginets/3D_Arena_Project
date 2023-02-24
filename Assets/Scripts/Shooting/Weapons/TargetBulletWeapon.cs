@@ -1,5 +1,6 @@
 using Shooting.Bullets;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Utils;
 
 namespace Shooting.Weapons
@@ -7,10 +8,11 @@ namespace Shooting.Weapons
     public class TargetBulletWeapon : MonoBehaviour
     {
         [SerializeField] private TargetBullet _targetBulletPrefab;
+        [SerializeField] private float _firingRate = 1f / 3f;
 
         private void Awake()
         {
-            InvokeRepeating("ShootDemo", 3f, 3f);
+            InvokeRepeating("ShootDemo", 1f / _firingRate, 1f / _firingRate);
         }
 
         private void ShootDemo()

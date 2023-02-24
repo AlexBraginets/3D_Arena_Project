@@ -3,6 +3,7 @@ using UI;
 using UnitStats;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Utils;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,15 +23,18 @@ public class GameManager : MonoBehaviour
         // Cursor.lockState = CursorLockMode.None;
     }
 
+    private Player Player => ReferencesHolder.Instance.Player;
     public void PauseGame()
     {
         Time.timeScale = 0f;
+        Player.gameObject.SetActive(false);
         OnGamePaused?.Invoke();
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1f;
+        Player.gameObject.SetActive(true);
         OnGameResumed?.Invoke();
     }
     public void RestartLevel()
