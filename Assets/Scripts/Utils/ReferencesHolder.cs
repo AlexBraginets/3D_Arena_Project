@@ -1,5 +1,6 @@
 using Enemies;
 using Metrics;
+using Teleportation;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -11,6 +12,7 @@ namespace Utils
         public Player Player;
         public ProximityEnemyProvider ProximityEnemyProvider;
         public EnemiesList EnemiesList;
+        public TeleportManager TeleportManager;
         [FormerlySerializedAs("GamaManager")] public GameManager gameManager;
         public static ReferencesHolder Instance { get; private set; }
 

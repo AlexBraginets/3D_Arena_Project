@@ -1,4 +1,5 @@
 using System.Collections;
+using Data;
 using Enemies;
 using UnityEngine;
 using Utils;
@@ -7,8 +8,7 @@ namespace Spawning
 {
     public class EnemySpawner : MonoBehaviour
     {
-        [SerializeField] private Enemy _enemyPrefab;
-        [SerializeField] private float _spawnTime;
+        [SerializeField] private EnemySpawnConfig _config;
         [SerializeField] private Transform _spawnPoint;
         private Coroutine _spawnCoroutine;
 
@@ -29,18 +29,22 @@ namespace Spawning
 
         private IEnumerator SpawnCoroutine()
         {
-            var wait = new WaitForSeconds(_spawnTime);
             while (true)
             {
-                yield return wait;
-                Spawn();
+                int spawnAmount = _config.GetSpawnAmount();
+                for (int i = 0; i < spawnAmount; i++)
+                {
+                    Spawn();
+                }
+                float spawnTime = _config.GetSpawnDelay();
+                yield return new WaitForSeconds(spawnTime);
             }
         }
 
         private void Spawn()
         {
             var spawnPosition = GetRandomSpawnPosition();
-            var enemyPrefab = _enemyPrefab;
+            var enemyPrefab = _config.GetPrefab();
             Spawn(spawnPosition, enemyPrefab);
         }
 

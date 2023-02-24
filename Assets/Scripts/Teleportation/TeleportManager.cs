@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 using Utils;
@@ -9,7 +10,7 @@ namespace Teleportation
     {
         [SerializeField] private Transform player;
         [SerializeField] private Transform[] teleportPoints;
-
+        public event Action<Vector3, Vector3> OnPlayerTeleported;
         private void OnTriggerExit(Collider other)
         {
             if (!other.IsPlayer()) return;
@@ -19,6 +20,7 @@ namespace Teleportation
         private void TeleportPlayer()
         {
             Vector3 teleportPosition = GetTeleportPosition();
+            OnPlayerTeleported?.Invoke(player.position, teleportPosition);
             TeleportPlayer(teleportPosition);
         }
 

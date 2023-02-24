@@ -10,6 +10,8 @@ namespace Shooting.Bullets
         private float _targetYOffset;
         private Transform _target;
 
+        private bool _hasPlayerTeleported = false;
+
         private Vector3 DirectionToTarget
         {
             get
@@ -24,14 +26,26 @@ namespace Shooting.Bullets
         {
             _target = target;
             _targetYOffset = yOffset;
+            ReferencesHolder.Instance.TeleportManager.OnPlayerTeleported += OnPlayerTeleported;
         }
+
+        private void OnPlayerTeleported(Vector3 from, Vector3 to)
+        {
+            _hasPlayerTeleported = true;
+            ReferencesHolder.Instance.TeleportManager.OnPlayerTeleported -= OnPlayerTeleported;
+        }
+
+        private Vector3 _lastDirectionToTarget;
 
         private void Update()
         {
             if (!_target) return;
             float dt = Time.deltaTime;
-            Vector3 dPosition = speed * dt * DirectionToTarget;
+            var directionToTarget = _hasPlayerTeleported ? _lastDirectionToTarget : DirectionToTarget;
+            Vector3 dPosition = speed * dt * directionToTarget;
             transform.position += dPosition;
+            if (!_hasPlayerTeleported)
+                _lastDirectionToTarget = DirectionToTarget;
         }
 
         private void OnTriggerEnter(Collider other)

@@ -18,8 +18,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        // Cursor.visible = true;
+        // Cursor.lockState = CursorLockMode.None;
     }
 
     public void PauseGame()
